@@ -13,7 +13,7 @@ export default class MenuState extends Phaser.State {
         let bird = titleGroup.create(190, 10, 'bird'); //添加bird到组里
         bird.animations.add('fly'); //添加动画
         bird.animations.play('fly', 12, true); //播放动画
-        titleGroup.x = 35;
+        titleGroup.x = this.game.width / 2 -titleGroup.width /2 ;
         titleGroup.y = 100;
         this.game.add.tween(titleGroup).to({y: 120}, 1000, null, true, 0, Number.MAX_VALUE, true); //标题的缓动动画
         let btn = this.game.add.button(this.game.width / 2, this.game.height / 2, 'btn', function () {//开始按钮

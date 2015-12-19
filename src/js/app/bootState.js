@@ -4,7 +4,7 @@ export default class BootState extends Phaser.State {
 
     preload() {
         if (!this.game.device.desktop) {
-            this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT; //全屏
+            this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
             this.scale.forcePortrait = true;
             this.scale.refresh();
         }
