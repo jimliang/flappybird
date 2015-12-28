@@ -6,7 +6,8 @@ import Phaser from 'Phaser';
 export default class PreloadState extends Phaser.State {
 
     preload() {
-        let preloadSprite = this.game.add.sprite(35, this.game.height / 2, 'loading'); //创建显示loading进度的sprite
+        let preloadSprite = this.game.add.sprite(this.game.width / 2, this.game.height / 2, 'loading'); //创建显示loading进度的sprite
+        preloadSprite.anchor.set(0.5);
         this.game.load.setPreloadSprite(preloadSprite);
         //以下为要加载的资源
         this.game.load.image('background', 'assets/background.png'); //背景

@@ -110,9 +110,7 @@ export default class PlayState extends Phaser.State {
         let scoreboard = this.gameOverGroup.create(this.game.width / 2, 70, 'score_board'); //分数板
         let currentScoreText = this.game.add.bitmapText(this.game.width / 2 + 60, 105, 'flappy_font', this.score + '', 20, this.gameOverGroup); //当前分数
         let bestScoreText = this.game.add.bitmapText(this.game.width / 2 + 60, 153, 'flappy_font', this.game.bestScore + '', 20, this.gameOverGroup); //最好分数
-        let replayBtn = this.game.add.button(this.game.width / 2, 210, 'btn', function () {//重玩按钮
-            this.game.state.start('play');
-        }, this, null, null, null, null, this.gameOverGroup);
+        let replayBtn = this.game.add.button(this.game.width / 2, 210, 'btn', ()=>{this.game.state.start('play');}, this, null, null, null, null, this.gameOverGroup);
         gameOverText.anchor.setTo(0.5, 0);
         scoreboard.anchor.setTo(0.5, 0);
         replayBtn.anchor.setTo(0.5, 0);
@@ -158,4 +156,7 @@ export default class PlayState extends Phaser.State {
         return false;
     }
 
+    render() {
+        this.game.debug.spriteInfo(this.bird, 32, 32);
+    }
 }

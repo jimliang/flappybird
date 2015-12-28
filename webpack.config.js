@@ -1,4 +1,12 @@
+var webpack = require('webpack');
 module.exports = {
+    plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    })
+],
     entry: ['./src/js/app/index.js'],
     output: {
         filename: 'bundle.js',
@@ -12,4 +20,4 @@ module.exports = {
     externals: {
         'Phaser': 'Phaser'
     }
-}; 
+};
